@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Red.Json.Helpers;
+using System.Text.Json;
 using System.Text.Json.Nodes;
 
 namespace Red.Json;
@@ -37,6 +38,6 @@ public static class Json
         if (json.ContainsKey(key))
             json[key] = value;
 
-        str = json.ToJson();
+        str = JsonHelper.CastToJson(json);
     }
 }
